@@ -7,46 +7,101 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="409dp"
-        android:layout_height="66dp"
+        android:id="@+id/questionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
         android:fontFamily="serif"
-        android:text="Android is an operating system."
+        android:text="Is Android the best operating system ?"
+        android:background="@color/Purple"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+       />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/trueButton"
         android:layout_width="150dp"
         android:layout_height="46dp"
         android:fontFamily="serif"
         android:text="True"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
+        android:background="@color/Purple"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/falseButton"
+        app:layout_constraintEnd_toStartOf="@+id/falseButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="@color/black"
         app:strokeColor="#00FFFFFF" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/falseButton"
         android:layout_width="150dp"
         android:layout_height="46dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="serif"
         android:text="False"
+        android:background="@color/Purple"
         android:textColorHighlight="#00FFFFFF"
         android:textColorLink="#00FFFFFF"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/trueButton"
         app:rippleColor="@color/black"
         app:strokeColor="#00FFFFFF" />
+
+    <Button
+        android:id="@+id/nextQuestionButton"
+        android:layout_width="380dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Next Question"
+        android:background="@color/Purple"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="180dp"
+        android:layout_height="51dp"
+        android:text="Finished"
+        android:background="@color/Blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/nextQuestionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/questionTextView" />
+
+    <TextView
+        android:id="@+id/correctAnswerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correct Answer"
+        android:background="@color/LightGreen"
+        android:padding="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/trueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView" />
+    <TextView
+        android:id="@+id/wrongAnswerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wrong Answer"
+        android:background="@color/DarkRed"
+        android:padding="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/trueButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
